@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../service/item.service'
+import { Item } from '../models/item'
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  items: Item[];
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    this.itemService.getItems().subscribe(items => {
+      this.items = items;
+    })
   }
-
 }
