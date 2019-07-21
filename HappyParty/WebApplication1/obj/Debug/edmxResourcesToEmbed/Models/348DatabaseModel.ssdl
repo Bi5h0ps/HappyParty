@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HappyPartyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BillingInfo">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="PostCode" />
+    </Key>
+    <Property Name="ClientId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="PostCode" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="UnitNum" Type="varchar" MaxLength="10" />
+    <Property Name="Street" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="VipLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactInfo">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="PhoneNum" />
+    </Key>
+    <Property Name="ClientId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="35" />
+    <Property Name="PhoneNum" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DecorationArrangement">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="DecorationId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="DecorationId" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DecorationMenu">
+    <Key>
+      <PropertyRef Name="DecorationId" />
+    </Key>
+    <Property Name="DecorationId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="DecorationName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntertainmentArrangement">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="EntertainmentId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="EntertainmentId" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntertainmentMenu">
+    <Key>
+      <PropertyRef Name="EntertainmentId" />
+    </Key>
+    <Property Name="EntertainmentId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="EntertainmentName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="LocationId" Type="char" MaxLength="8" />
+    <Property Name="EventDate" Type="date" />
+    <Property Name="InviteeNum" Type="int" />
+    <Property Name="budget" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="FoodArrangement">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="FoodId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FoodId" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FoodMenu">
+    <Key>
+      <PropertyRef Name="FoodId" />
+    </Key>
+    <Property Name="FoodId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FoodName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="PostCode" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="Street" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="AdditionalInfo" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PaymentInfo">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="CardNum" />
+    </Key>
+    <Property Name="ClientId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="CardNum" Type="decimal" Precision="16" Scale="0" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="CardCvv" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="ExpireDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="ClientId" Type="char" MaxLength="8" />
+    <Property Name="EventId" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__BillingIn__Clien__5535A963">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="BillingInfo" Type="Self.BillingInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="BillingInfo">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ContactIn__Clien__4E88ABD4">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ContactInfo" Type="Self.ContactInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="ContactInfo">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Decoratio__Decor__693CA210">
+    <End Role="DecorationMenu" Type="Self.DecorationMenu" Multiplicity="1" />
+    <End Role="DecorationArrangement" Type="Self.DecorationArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DecorationMenu">
+        <PropertyRef Name="DecorationId" />
+      </Principal>
+      <Dependent Role="DecorationArrangement">
+        <PropertyRef Name="DecorationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Decoratio__Event__6A30C649">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="DecorationArrangement" Type="Self.DecorationArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="DecorationArrangement">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entertain__Enter__6EF57B66">
+    <End Role="EntertainmentMenu" Type="Self.EntertainmentMenu" Multiplicity="1" />
+    <End Role="EntertainmentArrangement" Type="Self.EntertainmentArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntertainmentMenu">
+        <PropertyRef Name="EntertainmentId" />
+      </Principal>
+      <Dependent Role="EntertainmentArrangement">
+        <PropertyRef Name="EntertainmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Entertain__Event__6FE99F9F">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="EntertainmentArrangement" Type="Self.EntertainmentArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="EntertainmentArrangement">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Event__LocationI__59FA5E80">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FoodArran__Event__6477ECF3">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="FoodArrangement" Type="Self.FoodArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="FoodArrangement">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FoodArran__FoodI__6383C8BA">
+    <End Role="FoodMenu" Type="Self.FoodMenu" Multiplicity="1" />
+    <End Role="FoodArrangement" Type="Self.FoodArrangement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodMenu">
+        <PropertyRef Name="FoodId" />
+      </Principal>
+      <Dependent Role="FoodArrangement">
+        <PropertyRef Name="FoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentIn__Clien__52593CB8">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="PaymentInfo" Type="Self.PaymentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="PaymentInfo">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Request__ClientI__5DCAEF64">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Request__EventId__5EBF139D">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HappyPartyModelStoreContainer">
+    <EntitySet Name="BillingInfo" EntityType="Self.BillingInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactInfo" EntityType="Self.ContactInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DecorationArrangement" EntityType="Self.DecorationArrangement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DecorationMenu" EntityType="Self.DecorationMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntertainmentArrangement" EntityType="Self.EntertainmentArrangement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntertainmentMenu" EntityType="Self.EntertainmentMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodArrangement" EntityType="Self.FoodArrangement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodMenu" EntityType="Self.FoodMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentInfo" EntityType="Self.PaymentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BillingIn__Clien__5535A963" Association="Self.FK__BillingIn__Clien__5535A963">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="BillingInfo" EntitySet="BillingInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ContactIn__Clien__4E88ABD4" Association="Self.FK__ContactIn__Clien__4E88ABD4">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ContactInfo" EntitySet="ContactInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Decoratio__Decor__693CA210" Association="Self.FK__Decoratio__Decor__693CA210">
+      <End Role="DecorationMenu" EntitySet="DecorationMenu" />
+      <End Role="DecorationArrangement" EntitySet="DecorationArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Decoratio__Event__6A30C649" Association="Self.FK__Decoratio__Event__6A30C649">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="DecorationArrangement" EntitySet="DecorationArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entertain__Enter__6EF57B66" Association="Self.FK__Entertain__Enter__6EF57B66">
+      <End Role="EntertainmentMenu" EntitySet="EntertainmentMenu" />
+      <End Role="EntertainmentArrangement" EntitySet="EntertainmentArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Entertain__Event__6FE99F9F" Association="Self.FK__Entertain__Event__6FE99F9F">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="EntertainmentArrangement" EntitySet="EntertainmentArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Event__LocationI__59FA5E80" Association="Self.FK__Event__LocationI__59FA5E80">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FoodArran__Event__6477ECF3" Association="Self.FK__FoodArran__Event__6477ECF3">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="FoodArrangement" EntitySet="FoodArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FoodArran__FoodI__6383C8BA" Association="Self.FK__FoodArran__FoodI__6383C8BA">
+      <End Role="FoodMenu" EntitySet="FoodMenu" />
+      <End Role="FoodArrangement" EntitySet="FoodArrangement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentIn__Clien__52593CB8" Association="Self.FK__PaymentIn__Clien__52593CB8">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="PaymentInfo" EntitySet="PaymentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Request__ClientI__5DCAEF64" Association="Self.FK__Request__ClientI__5DCAEF64">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Request__EventId__5EBF139D" Association="Self.FK__Request__EventId__5EBF139D">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
