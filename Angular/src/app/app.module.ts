@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { ItemService } from './service/item.service'
+import { ClientService } from './service/client.service';
+import { ClientEditComponent } from './management/client-edit/client-edit.component';
+import { ClientListComponent } from './management/client-list/client-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,13 @@ import { ItemService } from './service/item.service'
     SidebarComponent,
     ManagementComponent,
     ServiceComponent,
-    HomeComponent
+    HomeComponent,
+    ClientEditComponent,
+    ClientListComponent
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'HappyParty'),
@@ -31,7 +39,7 @@ import { ItemService } from './service/item.service'
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [ItemService],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

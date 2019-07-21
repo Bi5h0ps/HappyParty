@@ -1,0 +1,24 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="form-group">
+      <label>CLIENT ID</label>
+      <input name="ClientId" #FullName="ngModel" [(ngModel)]="service.formData.ClientId" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>VIP LEVEL</label>
+      <input name="VipLevel" #Position="ngModel" [(ngModel)]="service.formData.VipLevel" class="form-control">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>FIRSTNAME</label>
+        <input name="FirstName" #EMPCode="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control">
+      </div>
+      <div class="form-group  col-md-6">
+        <label>LASTNAME</label>
+        <input name="LastName" #Mobile="ngModel" [(ngModel)]="service.formData.LastName" class="form-control">
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+  </form>

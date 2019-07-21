@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{7ABC6588-B232-4D9C-B737-2BF3C78BA0A7}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApplication1/Controllers/ClientsController.cs">
+    <Files>
+      <File FileName="WebApplication1/Models/Client.cs" Line="18" Column="22" />
+      <File FileName="WebApplication1/Controllers/ClientsController.cs" Line="69" Column="29" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HappyParty" expanded="True">
+            <Node name="WebApplication1" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ClientsController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="348DatabaseModel.edmx" expanded="True">
+                  <Node name="348DatabaseModel.tt" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WebApplication1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
