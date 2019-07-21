@@ -1,37 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ManagementComponent } from './management/management.component';
-import { ServiceComponent } from './service/service.component';
 import { HomeComponent } from './home/home.component';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
-import { ItemService } from './service/item.service'
+import { ClientsComponent } from './management/clients/clients.component';
+import { ClientComponent } from './management/Clients/client/client.component';
+import { ClientListComponent } from './management/Clients/client-list/client-list.component';
+import { ClientService } from './management/shared/client.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     ManagementComponent,
-    ServiceComponent,
-    HomeComponent
+    HomeComponent,
+    ClientsComponent,
+    ClientComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'HappyParty'),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ItemService],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

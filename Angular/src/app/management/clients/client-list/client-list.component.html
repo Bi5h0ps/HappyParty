@@ -1,0 +1,7 @@
+<table class="table table-striped">
+    <tr *ngFor="let client of service.list">
+        <td (click)="populateForm(client)">{{client.FirstName}}-{{client.LastName}}</td>
+        <td (click)="populateForm(client)">{{client.VipLevel}}</td>
+        <td><button (click)="onDelete(client.ClientId)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+</table>
