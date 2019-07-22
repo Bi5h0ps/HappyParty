@@ -37,14 +37,12 @@ export class ClientComponent implements OnInit {
   insertRecord(form: NgForm) {
     this.service.postClient(form.value).subscribe(res => {
       this.resetForm(form);
-      this.service.refreshList();
     });
   }
 
   updateRecord(form: NgForm) {
     this.service.putClient(form.value).subscribe(res => {
       this.resetForm(form);
-      this.service.refreshList();
     });
   }
 }

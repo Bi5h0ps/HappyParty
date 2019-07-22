@@ -1,7 +1,7 @@
 <div class="input-group">
-    <input #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+    <input [disabled]="isDisabled()" #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control" aria-label="Text input with segmented dropdown button" [(ngModel)]="searchValue">
     <div class="input-group-append">
-        <button type="button" class="btn btn-outline-secondary" (click)="onSearch(box.value)">Search by {{this.searchFlag? "Vip Level":"Name"}}</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="onSearch(box.value)">{{this.Content[searchFlag]}}</button>
         <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -9,6 +9,8 @@
             <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
         <div role="separator" class="dropdown-divider"></div>
             <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+        <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="toggleSearch(2)">List ALL</a>
         </div>
     </div>
 </div>
@@ -16,7 +18,7 @@
     <tr *ngFor="let client of service.list">
         <td (click)="populateForm(client)">{{client.FirstName}} {{client.LastName}}</td>
         <td (click)="populateForm(client)">Level {{client.VipLevel}}</td>
-        <td><button (click)="onDelete(client.ClientId)" class="btn btn-sm btn-outline-danger">
+        <td><button (click)="onDelete(client.ClientId,this.searchFlag)" class="btn btn-sm btn-outline-danger">
             <img src="../../assets/icon/svg/x.svg" id="icon-x">
         </button></td>
     </tr>

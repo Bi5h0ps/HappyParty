@@ -13,6 +13,9 @@ import { ClientComponent } from './management/clients/client/client.component';
 import { ClientListComponent } from './management/clients/client-list/client-list.component';
 import { ClientService } from './management/shared/client.service';
 import { PartyserviceComponent } from './partyservice/partyservice.component';
+import { EventsComponent } from './partyservice/events/events.component';
+import { EventComponent } from './partyservice/events/event/event.component';
+import { EventListComponent } from './partyservice/events/event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PartyserviceComponent } from './partyservice/partyservice.component';
     ClientsComponent,
     ClientComponent,
     ClientListComponent,
-    PartyserviceComponent
+    PartyserviceComponent,
+    EventsComponent,
+    EventComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,

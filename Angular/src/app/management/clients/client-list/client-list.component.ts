@@ -10,12 +10,16 @@ import { ClientService } from '../../shared/client.service';
 export class ClientListComponent implements OnInit {
   // 0 => first name 
   // 1 => vip level
+  // 2 => ALL
   searchFlag: number = 0;
+  Content: string[]=['Search by First Name','Search by VipLevel','List All'];
+  searchValue: string = '';
+
 
   constructor(private service: ClientService) { }
 
   ngOnInit() {
-    this.service.refreshList();
+    this.service.refreshListAll();
   }
 
   populateForm(client: Client) {
@@ -24,21 +28,35 @@ export class ClientListComponent implements OnInit {
 
   toggleSearch(flag: number) {
     this.searchFlag = flag;
+    this.searchValue = null;
   }
 
-  onDelete(id: number) {
+  isDisabled(): boolean{
+    if (this.searchFlag == 2) return true;
+    return false;
+  }
+
+  onDelete(id: number,input: string) {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteClient(id).subscribe(res => {
-        this.service.refreshList();
+        if(this.searchFlag == 0) {
+          this.service.refreshList(input);
+        } else if (this.searchFlag == 1) {
+          this.service.refreshList(Number(input));
+        } else {
+          this.service.refreshListAll();
+        }
       });
     }
   }
 
   onSearch(input: string) {
-    if(!this.searchFlag) {
-      alert("search by name: " + input);
+    if(this.searchFlag == 0) {
+      this.service.refreshList(input);
+    } else if (this.searchFlag == 1) {
+      this.service.refreshList(Number(input));
     } else {
-      alert("search by vip level: " + input);
+      this.service.refreshListAll();
     }
   }
 

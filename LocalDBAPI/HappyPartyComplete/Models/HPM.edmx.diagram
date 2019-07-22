@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="326f3dec8e384156a928f4104acb0ca5" Name="Diagram1">
+        <EntityTypeShape EntityType="PerfectPartyModel.BillingInfo" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.Client" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.ContactInfo" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.DecorationMenu" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.EntertainmentMenu" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.Event" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.FoodMenu" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.Location" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.PaymentInfo" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectPartyModel.Request" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PerfectPartyModel.FK__BillingIn__Clien__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FK__ContactIn__Clien__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FK__PaymentIn__Clien__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FK__Request__ClientI__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FK__Event__LocationI__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FK__Request__EventId__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.DecorationArrangement" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.EntertainmentArrangement" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectPartyModel.FoodArrangement" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

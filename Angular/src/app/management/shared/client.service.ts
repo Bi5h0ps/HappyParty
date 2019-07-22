@@ -13,29 +13,34 @@ export class ClientService {
   formData: Client;
   list : Client[] = [];
 
-  readonly rootURL ="http://127.0.0.1:8080/api"
+  readonly rootURL ="https://localhost:44302/api"
 
   constructor(private http : HttpClient) {
-    this.Theo = new Client(1,"Theo","Guo",3);
-    this.Jiahan = new Client(1,"Doomer","Xi",3);
-    this.list.push(this.Theo);
-    this.list.push(this.Jiahan)
    }
 
   postClient(formData : Client){
    return this.http.post(this.rootURL+'/Clients',formData);
   }
 
-  refreshList(){
-    // this.http.get(this.rootURL+'/Clients')
-    // .toPromise().then(res => this.list = res as Client[]);
+  refreshList(id : number | string){
+    if (typeof id === 'string') {
+      this.http.get(this.rootURL+'/Clients'+'?FirstName='+id)
+      .toPromise().then(res => this.list = res as Client[]);
+    } else {
+      this.http.get(this.rootURL+'/Clients'+'?level='+id)
+      .toPromise().then(res => this.list = res as Client[]);
+    }
+  }
+  refreshListAll() {
+    this.http.get(this.rootURL+'/Clients')
+    .toPromise().then(res => this.list = res as Client[]);
   }
 
   putClient(formData : Client){
     return this.http.put(this.rootURL+'/Clients/'+formData.ClientId,formData);
-   }
+  }
 
-   deleteClient(id : number){
+  deleteClient(id : number){
     return this.http.delete(this.rootURL+'/Clients/'+id);
-   }
+  }
 }
