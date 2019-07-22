@@ -12,6 +12,7 @@ import { ClientsComponent } from './management/clients/clients.component';
 import { ClientComponent } from './management/clients/client/client.component';
 import { ClientListComponent } from './management/clients/client-list/client-list.component';
 import { ClientService } from './management/shared/client.service';
+import { PartyserviceComponent } from './partyservice/partyservice.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClientService } from './management/shared/client.service';
     HomeComponent,
     ClientsComponent,
     ClientComponent,
-    ClientListComponent
+    ClientListComponent,
+    PartyserviceComponent
   ],
   imports: [
     BrowserModule,

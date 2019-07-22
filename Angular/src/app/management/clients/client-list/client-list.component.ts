@@ -8,6 +8,9 @@ import { ClientService } from '../../shared/client.service';
   styleUrls: ['./client-list.component.scss']
 })
 export class ClientListComponent implements OnInit {
+  // 0 => first name 
+  // 1 => vip level
+  searchFlag: number = 0;
 
   constructor(private service: ClientService) { }
 
@@ -19,11 +22,23 @@ export class ClientListComponent implements OnInit {
     this.service.formData = Object.assign({}, client);
   }
 
+  toggleSearch(flag: number) {
+    this.searchFlag = flag;
+  }
+
   onDelete(id: number) {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteClient(id).subscribe(res => {
         this.service.refreshList();
       });
+    }
+  }
+
+  onSearch(input: string) {
+    if(!this.searchFlag) {
+      alert("search by name: " + input);
+    } else {
+      alert("search by vip level: " + input);
     }
   }
 
