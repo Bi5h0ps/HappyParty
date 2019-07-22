@@ -9,8 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ManagementComponent } from './management/management.component';
 import { HomeComponent } from './home/home.component';
 import { ClientsComponent } from './management/clients/clients.component';
-import { ClientComponent } from './management/Clients/client/client.component';
-import { ClientListComponent } from './management/Clients/client-list/client-list.component';
+import { ClientComponent } from './management/clients/client/client.component';
+import { ClientListComponent } from './management/clients/client-list/client-list.component';
 import { ClientService } from './management/shared/client.service';
 
 @NgModule({
