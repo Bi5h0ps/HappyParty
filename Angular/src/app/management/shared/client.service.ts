@@ -31,6 +31,7 @@ export class ClientService {
       .toPromise().then(res => this.list = res as Client[]);
     }
   }
+
   refreshListAll() {
     this.http.get(this.rootURL+'/Clients')
     .toPromise().then(res => this.list = res as Client[]);

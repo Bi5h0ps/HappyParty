@@ -11,7 +11,7 @@ export class ClientListComponent implements OnInit {
   // 0 => first name 
   // 1 => vip level
   // 2 => ALL
-  searchFlag: number = 0;
+  searchFlag: number = 2;
   Content: string[]=['Search by First Name','Search by VipLevel','List All'];
   searchValue: string = '';
 
@@ -31,21 +31,10 @@ export class ClientListComponent implements OnInit {
     this.searchValue = null;
   }
 
-  isDisabled(): boolean{
-    if (this.searchFlag == 2) return true;
-    return false;
-  }
-
-  onDelete(id: number,input: string) {
+  onDelete(id: number, input: string) {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteClient(id).subscribe(res => {
-        if(this.searchFlag == 0) {
-          this.service.refreshList(input);
-        } else if (this.searchFlag == 1) {
-          this.service.refreshList(Number(input));
-        } else {
-          this.service.refreshListAll();
-        }
+        this.onSearch(input);
       });
     }
   }
