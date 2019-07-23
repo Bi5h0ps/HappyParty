@@ -28,21 +28,24 @@ export class ClientComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    if (form.value.ClientId == null)
+    if (form.value.ClientId == null) {
       this.insertRecord(form);
-    else
+    } else {
       this.updateRecord(form);
+    }
   }
 
   insertRecord(form: NgForm) {
     this.service.postClient(form.value).subscribe(res => {
       this.resetForm(form);
+      this.service.refreshListAll();
     });
   }
 
   updateRecord(form: NgForm) {
     this.service.putClient(form.value).subscribe(res => {
       this.resetForm(form);
+      this.service.refreshListAll();
     });
   }
 }
