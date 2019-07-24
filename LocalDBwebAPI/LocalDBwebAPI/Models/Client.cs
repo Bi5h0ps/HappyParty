@@ -11,25 +11,16 @@ namespace LocalDBwebAPI.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [DataContract(IsReference = true)]
+    
     public partial class Client
     {
-        [DataMember]
         public int ClientId { get; set; }
-        [DataMember]
         public string FirstName { get; set; }
-        [DataMember]
         public string LastName { get; set; }
-        [DataMember]
         public int VipLevel { get; set; }
-
-        [DataMember]
+    
         public virtual BillingInfo BillingInfo { get; set; }
-        [DataMember]
         public virtual ContactInfo ContactInfo { get; set; }
-        [DataMember]
         public virtual PaymentInfo PaymentInfo { get; set; }
     }
 }

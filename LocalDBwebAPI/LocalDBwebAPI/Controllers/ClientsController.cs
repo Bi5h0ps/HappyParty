@@ -14,7 +14,7 @@ namespace LocalDBwebAPI.Controllers
 {
     public class ClientsController : ApiController
     {
-        private PartyEntities db = new PartyEntities();
+        private PartyFinalEntities db = new PartyFinalEntities();
         public IEnumerable<Client> Get(String FirstName)
         {
             return db.Clients.Where(e => e.FirstName == FirstName);

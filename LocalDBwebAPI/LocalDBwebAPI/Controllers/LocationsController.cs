@@ -14,7 +14,7 @@ namespace LocalDBwebAPI.Controllers
 {
     public class LocationsController : ApiController
     {
-        private PartyEntities db = new PartyEntities();
+        private PartyFinalEntities db = new PartyFinalEntities();
 
         // GET: api/Locations
         public IQueryable<Location> GetLocations()

@@ -14,7 +14,7 @@ namespace LocalDBwebAPI.Controllers
 {
     public class ContactInfoesController : ApiController
     {
-        private PartyEntities db = new PartyEntities();
+        private PartyFinalEntities db = new PartyFinalEntities();
 
         // GET: api/ContactInfoes
         public IQueryable<ContactInfo> GetContactInfoes()

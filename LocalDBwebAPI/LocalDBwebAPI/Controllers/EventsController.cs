@@ -14,7 +14,7 @@ namespace LocalDBwebAPI.Controllers
 {
     public class EventsController : ApiController
     {
-        private PartyEntities db = new PartyEntities();
+        private PartyFinalEntities db = new PartyFinalEntities();
 
         public IEnumerable<Event> Get(int ClientId)
         {

@@ -178,55 +178,55 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BillingInfo.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Client.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactInfo.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DecorationArrangement.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DecorationMenu.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntertainmentArrangement.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntertainmentMenu.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Event.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodArrangement.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodMenu.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Location.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PartyModel.Context.cs">
+    <Compile Include="Models\PartyFinalModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartyModel.Context.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PartyModel.cs">
+    <Compile Include="Models\PartyFinalModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PartyModel.Designer.cs">
+    <Compile Include="Models\PartyFinalModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PartyModel.edmx</DependentUpon>
+      <DependentUpon>PartyFinalModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PaymentInfo.cs">
-      <DependentUpon>PartyModel.tt</DependentUpon>
+      <DependentUpon>PartyFinalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -239,15 +239,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\PartyModel.Context.tt">
+    <Content Include="Models\PartyFinalModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartyModel.edmx</DependentUpon>
-      <LastGenOutput>PartyModel.Context.cs</LastGenOutput>
+      <DependentUpon>PartyFinalModel.edmx</DependentUpon>
+      <LastGenOutput>PartyFinalModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PartyModel.tt">
+    <Content Include="Models\PartyFinalModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PartyModel.edmx</DependentUpon>
-      <LastGenOutput>PartyModel.cs</LastGenOutput>
+      <DependentUpon>PartyFinalModel.edmx</DependentUpon>
+      <LastGenOutput>PartyFinalModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -270,12 +270,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\PartyModel.edmx">
+    <EntityDeploy Include="Models\PartyFinalModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PartyModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PartyFinalModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\PartyModel.edmx.diagram">
-      <DependentUpon>PartyModel.edmx</DependentUpon>
+    <Content Include="Models\PartyFinalModel.edmx.diagram">
+      <DependentUpon>PartyFinalModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
