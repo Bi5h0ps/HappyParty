@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../../shared/client.model';
 import { ClientService } from '../../shared/client.service';
+import { ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-client-list',
@@ -14,6 +15,7 @@ export class ClientListComponent implements OnInit {
   searchFlag: number = 0;
   Content: string[]=['Search by First Name','Search by VipLevel','List All'];
   searchValue: string = '';
+  @ViewChild('closeModal',{static: false}) closeModal: ElementRef;
 
 
   constructor(private service: ClientService) { }
@@ -58,6 +60,18 @@ export class ClientListComponent implements OnInit {
     } else {
       this.service.refreshListAll();
     }
+  }
+
+  modalOnSubmit() {
+      if (this.service.formData.ClientId == null) {
+        this.service.postClient(this.service.formData).subscribe(res => {
+          this.closeModal.nativeElement.click();
+        });
+      } else {
+        this.service.putClient(this.service.formData).subscribe(res => {
+          this.closeModal.nativeElement.click();
+        });
+      }
   }
 
 }

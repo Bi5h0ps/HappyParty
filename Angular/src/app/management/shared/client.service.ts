@@ -13,7 +13,7 @@ export class ClientService {
   formData: Client;
   list : Client[] = [];
 
-  readonly rootURL ="https://localhost:44302/api"
+  readonly rootURL ="http://127.0.0.1:8080/api"
 
   constructor(private http : HttpClient) {
    }

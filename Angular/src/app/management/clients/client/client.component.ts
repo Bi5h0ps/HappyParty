@@ -16,33 +16,14 @@ export class ClientComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
-    if (form != null)
+    if (form != null) {
       form.resetForm();
+    }
     this.service.formData = {
       ClientId: null,
       FirstName: '',
       LastName: '',
       VipLevel: null
     }
-  }
-
-
-  onSubmit(form: NgForm) {
-    if (form.value.ClientId == null)
-      this.insertRecord(form);
-    else
-      this.updateRecord(form);
-  }
-
-  insertRecord(form: NgForm) {
-    this.service.postClient(form.value).subscribe(res => {
-      this.resetForm(form);
-    });
-  }
-
-  updateRecord(form: NgForm) {
-    this.service.putClient(form.value).subscribe(res => {
-      this.resetForm(form);
-    });
   }
 }
