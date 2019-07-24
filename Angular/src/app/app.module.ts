@@ -16,6 +16,10 @@ import { PartyserviceComponent } from './partyservice/partyservice.component';
 import { EventsComponent } from './partyservice/events/events.component';
 import { EventComponent } from './partyservice/events/event/event.component';
 import { EventListComponent } from './partyservice/events/event-list/event-list.component';
+import { LocationsComponent } from './supplyments/locations/locations.component';
+import { LocationComponent } from './supplyments/locations/location/location.component';
+import { LocationListComponent } from './supplyments/locations/location-list/location-list.component';
+import { SupplymentsComponent } from './supplyments/supplyments.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { EventListComponent } from './partyservice/events/event-list/event-list.
     PartyserviceComponent,
     EventsComponent,
     EventComponent,
-    EventListComponent
+    EventListComponent,
+    LocationsComponent,
+    LocationComponent,
+    LocationListComponent,
+    SupplymentsComponent
   ],
   imports: [
     BrowserModule,

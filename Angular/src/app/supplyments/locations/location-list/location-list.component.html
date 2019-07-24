@@ -19,10 +19,10 @@
             aria-label="Text input with segmented dropdown button" [(ngModel)]="searchValue">
     </div>
     <div class="toolbar-button">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientModal"
-            (click)="onNewClient()" #newClientButton>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#LocationModal"
+            (click)="onNewLocation()" #newClientButton>
             <img src="../../../../assets/icon/svg/plus.svg" class="happy-icon">
-            New Client
+            New Location
         </button>
     </div>
     <div class="toolbar-button">
@@ -35,50 +35,42 @@
     <table class="table-fill">
         <thead>
             <tr>
-                <th class="text-left">ClientId</th>
-                <th class="text-left">First Name</th>
-                <th class="text-left">Last Name</th>
-                <th class="text-left">Email</th>
-                <th class="text-left">Phone#</th>
-                <th class="text-left">Vip Level</th>
+                <th class="text-left">LocationId</th>
+                <th class="text-left">Post Code</th>
+                <th class="text-left">Address</th>
+                <th class="text-left">Additional Info</th>
             </tr>
         </thead>
         <tbody class="table-hover">
-            <tr (click)="onSelect(client)" *ngFor="let client of service.list">
-                <td class="text-left">C00{{client.ClientId}}</td>
-                <td class="text-left">{{client.FirstName}}</td>
-                <td class="text-left">{{client.LastName}}</td>
-                <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
-                            *ngIf="client.ClientId == Info.ClientId">{{Info.Email}}</span></span></td>
-                <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
-                            *ngIf="client.ClientId == Info.ClientId && Info.PhoneNum != 0">{{Info.PhoneNum}}</span></span>
-                </td>
-                <td class="text-left">{{client.VipLevel}}</td>
+            <tr (click)="onSelect(location)" *ngFor="let location of service.locationList">
+                <td class="text-left">E00{{location.LocationId}}</td>
+                <td class="text-left">C00{{location.PostCode}}</td>
+                <td class="text-left">{{location.LocationAddress}}</td>
+                <td class="text-left">{{location.AdditionalInfo}}</td>
             </tr>
         </tbody>
     </table>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="LocationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Client</h5>
+                <h5 class="modal-title" id="exampleModalLabel">New Location</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div>
-                <app-client></app-client>
+                <app-location></app-location>
             </div>
             <div class="modal-footer">
-                <button *ngIf="this.isItemSelected" type="button" (click)="onDelete(this.service.formData.ClientId)"
+                <button *ngIf="this.isItemSelected" type="button"
+                    (click)="onDelete(this.service.formData.LocationId)"
                     class="btn btn-danger button-delete">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
-                <button type="button"
-                    [disabled]="this.service.formData.FirstName == '' || this.service.formClientInfo.PhoneNum == null || this.service.formClientInfo.PhoneNum == 0"
-                    class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
             </div>
         </div>
     </div>
