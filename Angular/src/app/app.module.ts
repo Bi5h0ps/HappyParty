@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ClientsComponent } from './management/clients/clients.component';
 import { ClientComponent } from './management/clients/client/client.component';
 import { ClientListComponent } from './management/clients/client-list/client-list.component';
-import { ClientService } from './management/shared/client.service';
+import { ClientService } from './management/service/client.service';
 import { PartyserviceComponent } from './partyservice/partyservice.component';
 import { EventsComponent } from './partyservice/events/events.component';
 import { EventComponent } from './partyservice/events/event/event.component';

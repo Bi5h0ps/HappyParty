@@ -1,31 +1,41 @@
 <div class="mg-2 content">
-        <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
-            <input type="hidden" name="ClientId" #ClientId="ngModel" [(ngModel)]="service.formData.ClientId">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>First Name</label>
-                    <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control custom-input" required>
-                    <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This field is required.</div>
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <input type="hidden" name="ClientId" #ClientId="ngModel" [(ngModel)]="service.formData.ClientId">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input placeholder="First Name" name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName"
+                    class="form-control custom-input" required>
+                <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This field is required.
                 </div>
-                <div class="form-group  col-md-6">
-                    <label>Last Name</label>
-                    <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control custom-input ">
-                </div> 
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group  col-md-6">
+                <input placeholder="Last Name" name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName"
+                    class="form-control custom-input ">
+            </div>
+        </div>
+        <!-- <div class="form-group">
                 <label>Vip Level</label>
                 <input name="VipLevel" #VipLevel="ngModel" [(ngModel)]="service.formData.VipLevel" class="form-control custom-input ">
             </div> -->
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="VipLevel" [(ngModel)]="service.formData.VipLevel">
-                    <option selected>Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <div class="input-group-append">
-                    <label class="input-group-text" for="inputGroupSelect02">Vip Level</label>
-                </div>
-            </div>                  
-        </form>
+        <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect02" name="VipLevel"
+                [(ngModel)]="service.formData.VipLevel">
+                <option selected>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <div class="input-group-append">
+                <label class="input-group-text" for="inputGroupSelect02">Vip Level</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input placeholder="Email" name="Email" #Email="ngModel" [(ngModel)]="service.formClientInfo.Email"
+                class="form-control custom-input ">
+        </div>
+        <div class="form-group">
+            <input placeholder="Phone Number" name="PhoneNum" #PhoneNum="ngModel" [(ngModel)]="service.formClientInfo.PhoneNum"
+                class="form-control custom-input ">
+        </div>
+    </form>
 </div>

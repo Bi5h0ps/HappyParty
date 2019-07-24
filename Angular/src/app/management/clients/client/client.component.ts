@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from '../../shared/client.service';
+import { ClientService } from '../../service/client.service';
 import {NgForm} from '@angular/forms';
 
 @Component({

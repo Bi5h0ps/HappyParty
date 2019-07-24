@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../../shared/client.model';
-import { ClientService } from '../../shared/client.service';
+import { Client } from '../../service/client.model';
+import { ClientService } from '../../service/client.service';
 import { ViewChild, ElementRef} from '@angular/core';
 
 @Component({
@@ -15,12 +15,15 @@ export class ClientListComponent implements OnInit {
   searchFlag: number = 0;
   Content: string[]=['Search by First Name','Search by VipLevel','List All'];
   searchValue: string = '';
+  isItemSelected: boolean = false;
   @ViewChild('closeModal',{static: false}) closeModal: ElementRef;
+  @ViewChild('newClientButton', {static: false}) newClientButton: ElementRef;
 
 
   constructor(private service: ClientService) { }
 
   ngOnInit() {
+    this.onNewClient();
     this.service.refreshListAll();
   }
 
@@ -41,13 +44,8 @@ export class ClientListComponent implements OnInit {
   onDelete(id: number,input: string) {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteClient(id).subscribe(res => {
-        if(this.searchFlag == 0) {
-          this.service.refreshList(input);
-        } else if (this.searchFlag == 1) {
-          this.service.refreshList(Number(input));
-        } else {
-          this.service.refreshListAll();
-        }
+        this.service.refreshListAll();
+        this.closeModal.nativeElement.click();
       });
     }
   }
@@ -62,16 +60,61 @@ export class ClientListComponent implements OnInit {
     }
   }
 
+  onRefresh() {
+    this.service.refreshListAll();
+  }
+
+  onNewClient() {
+    this.isItemSelected = false;
+    this.service.formData = {
+      ClientId: null,
+      FirstName: "",
+      LastName: "",
+      VipLevel: null
+    }
+    this.service.formClientInfo = {
+      ClientId: null,
+      Email: "",
+      PhoneNum: null
+    }
+  }
+
+  onSelect(clientData: Client) {
+    this.newClientButton.nativeElement.click();
+    this.isItemSelected = true;
+    this.service.formData = Object.assign({}, clientData);
+
+    this.service.formClientInfo.ClientId = clientData.ClientId;
+    for (let info of this.service.Infolist) {
+      if (info.ClientId == clientData.ClientId) {
+        this.service.formClientInfo = Object.assign({}, info);
+        break;
+      } else {
+        this.service.formClientInfo = {
+          ClientId: clientData.ClientId,
+          Email: '',
+          PhoneNum: null,
+        }
+      }
+    }
+  }
+
   modalOnSubmit() {
       if (this.service.formData.ClientId == null) {
         this.service.postClient(this.service.formData).subscribe(res => {
-          this.closeModal.nativeElement.click();
+          this.service.formClientInfo.ClientId = <number> res;
+          this.service.postInfo(this.service.formClientInfo).subscribe(res => {
+            this.closeModal.nativeElement.click();
+            this.onRefresh();
+          });
         });
       } else {
         this.service.putClient(this.service.formData).subscribe(res => {
-          this.closeModal.nativeElement.click();
+          this.service.postInfo(this.service.formClientInfo).subscribe(res => {
+            this.closeModal.nativeElement.click();
+            this.onRefresh();
+          });
         });
       }
   }
-
 }
