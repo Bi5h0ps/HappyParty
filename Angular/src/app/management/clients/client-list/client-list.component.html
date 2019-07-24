@@ -1,23 +1,83 @@
-<div class="input-group">
-    <input #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-    <div class="input-group-append">
-        <button type="button" class="btn btn-outline-secondary" (click)="onSearch(box.value)">Search by {{this.searchFlag? "Vip Level":"Name"}}</button>
-        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
+<div class="row">
+    <div class="input-group col-10">
+        <div class="input-group-prepend">
+            <button type="button" class="btn btn-outline-secondary"
+                (click)="onSearch(box.value)">{{this.Content[searchFlag]}}</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="toggleSearch(2)">List ALL</a>
+            </div>
+        </div>
+        <input [disabled]="isDisabled()" #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control"
+            aria-label="Text input with segmented dropdown button" [(ngModel)]="searchValue">
+    </div>
+    <div class="toolbar-button">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#clientModal"
+            (click)="onNewClient()" #newClientButton>
+            <img src="../../../../assets/icon/svg/plus.svg" class="happy-icon">
+            New Client
         </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
-        <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+    </div>
+    <div class="toolbar-button">
+        <button type="button" class="btn btn-primary" (click)="onRefresh()">
+            <img src="../../../../assets/icon/svg/loop-circular.svg" class="happy-icon">
+        </button>
+    </div>
+</div>
+<div class="row">
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-left">ClientId</th>
+                <th class="text-left">First Name</th>
+                <th class="text-left">Last Name</th>
+                <th class="text-left">Vip Level</th>
+                <th class="text-left">Email</th>
+                <th class="text-left">Phone#</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr (click)="onSelect(client)" *ngFor="let client of service.list">
+                <td class="text-left">C00{{client.ClientId}}</td>
+                <td class="text-left">{{client.FirstName}}</td>
+                <td class="text-left">{{client.LastName}}</td>
+                <td class="text-left">{{client.VipLevel}}</td>
+                <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
+                            *ngIf="client.ClientId == Info.ClientId">{{Info.Email}}</span></span></td>
+                <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
+                            *ngIf="client.ClientId == Info.ClientId">{{Info.PhoneNum}}</span></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Client</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <app-client></app-client>
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="this.isItemSelected" type="button"
+                    (click)="onDelete(this.service.formData.ClientId, box.value)"
+                    class="btn btn-danger button-delete">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
+                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+            </div>
         </div>
     </div>
 </div>
-<table class="table table-striped">
-    <tr *ngFor="let client of service.list">
-        <td (click)="populateForm(client)">{{client.FirstName}} {{client.LastName}}</td>
-        <td (click)="populateForm(client)">Level {{client.VipLevel}}</td>
-        <td><button (click)="onDelete(client.ClientId)" class="btn btn-sm btn-outline-danger">
-            <img src="../../assets/icon/svg/x.svg" id="icon-x">
-        </button></td>
-    </tr>
-</table>

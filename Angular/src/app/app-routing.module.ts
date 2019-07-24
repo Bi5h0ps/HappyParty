@@ -6,6 +6,7 @@ import { PartyserviceComponent } from './partyservice/partyservice.component';
 
 
 const routes: Routes = [
+  {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent},
   {path: "management", component: ManagementComponent},
   {path: "partyservice", component: PartyserviceComponent}
