@@ -4,32 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5a957834723e498687c9463b75ce3e56" Name="Diagram1">
-        <EntityTypeShape EntityType="PartyDBModel.BillingInfo" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.Client" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.ContactInfo" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.DecorationArrangement" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.DecorationMenu" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.EntertainmentArrangement" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.EntertainmentMenu" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.Event" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.FoodArrangement" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.FoodMenu" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.Location" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.PaymentInfo" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartyDBModel.Request" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
-        <AssociationConnector Association="PartyDBModel.FK__BillingIn__Clien__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__ContactIn__Clien__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__PaymentIn__Clien__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Request__ClientI__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Decoratio__Decor__68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Decoratio__Event__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Entertain__Enter__6E01572D" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Entertain__Event__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Event__LocationI__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__FoodArran__Event__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__Request__EventId__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="PartyDBModel.FK__FoodArran__FoodI__628FA481" ManuallyRouted="false" />
+      <Diagram DiagramId="cbfaf2371af0467788007506cc29dc70" Name="Diagram1">
+        <EntityTypeShape EntityType="PartyModel.BillingInfo" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.Client" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.ContactInfo" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.DecorationArrangement" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.DecorationMenu" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.EntertainmentArrangement" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.EntertainmentMenu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.Event" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.FoodArrangement" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.FoodMenu" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.Location" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyModel.PaymentInfo" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="PartyModel.FK__BillingIn__Clien__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="PartyModel.FK__ContactIn__Clien__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="PartyModel.FK__PaymentIn__Clien__3F466844" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -16,8 +16,5 @@ namespace LocalDBwebAPI.Models
     {
         public int EventId { get; set; }
         public string DecorationId { get; set; }
-    
-        public virtual DecorationMenu DecorationMenu { get; set; }
-        public virtual Event Event { get; set; }
     }
 }

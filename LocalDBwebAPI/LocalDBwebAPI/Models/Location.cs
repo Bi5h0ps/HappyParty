@@ -14,18 +14,9 @@ namespace LocalDBwebAPI.Models
     
     public partial class Location
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Location()
-        {
-            this.Events = new HashSet<Event>();
-        }
-    
         public string LocationId { get; set; }
         public string PostCode { get; set; }
         public string LocationAddress { get; set; }
         public string AdditionalInfo { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Event> Events { get; set; }
     }
 }

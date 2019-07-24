@@ -15,15 +15,10 @@ namespace LocalDBwebAPI.Models
     public partial class Event
     {
         public int EventId { get; set; }
+        public Nullable<int> ClientId { get; set; }
         public string LocationId { get; set; }
         public Nullable<System.DateTime> EventDate { get; set; }
         public Nullable<int> InviteeNum { get; set; }
         public Nullable<decimal> budget { get; set; }
-    
-        public virtual DecorationArrangement DecorationArrangement { get; set; }
-        public virtual EntertainmentArrangement EntertainmentArrangement { get; set; }
-        public virtual Location Location { get; set; }
-        public virtual FoodArrangement FoodArrangement { get; set; }
-        public virtual Request Request { get; set; }
     }
 }

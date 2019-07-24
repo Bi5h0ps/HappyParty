@@ -14,17 +14,8 @@ namespace LocalDBwebAPI.Models
     
     public partial class EntertainmentMenu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EntertainmentMenu()
-        {
-            this.EntertainmentArrangements = new HashSet<EntertainmentArrangement>();
-        }
-    
         public string EntertainmentId { get; set; }
         public string EntertainmentName { get; set; }
         public string Supplier { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntertainmentArrangement> EntertainmentArrangements { get; set; }
     }
 }

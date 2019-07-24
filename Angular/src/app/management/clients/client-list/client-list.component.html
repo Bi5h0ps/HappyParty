@@ -52,7 +52,7 @@
                 <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
                             *ngIf="client.ClientId == Info.ClientId">{{Info.Email}}</span></span></td>
                 <td class="text-left"><span *ngFor="let Info of service.Infolist"><span
-                            *ngIf="client.ClientId == Info.ClientId">{{Info.PhoneNum}}</span></span></td>
+                            *ngIf="client.ClientId == Info.ClientId && Info.PhoneNum != 0">{{Info.PhoneNum}}</span></span></td>
             </tr>
         </tbody>
     </table>
@@ -73,10 +73,10 @@
             </div>
             <div class="modal-footer">
                 <button *ngIf="this.isItemSelected" type="button"
-                    (click)="onDelete(this.service.formData.ClientId, box.value)"
+                    (click)="onDelete(this.service.formData.ClientId)"
                     class="btn btn-danger button-delete">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
-                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+                <button type="button" [disabled]="this.service.formData.FirstName == '' || this.service.formClientInfo.PhoneNum == null || this.service.formClientInfo.PhoneNum == 0" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
             </div>
         </div>
     </div>

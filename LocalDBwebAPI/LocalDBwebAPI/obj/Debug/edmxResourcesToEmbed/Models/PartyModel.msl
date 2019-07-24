@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PartyDBModelStoreContainer" CdmEntityContainer="PartyDBEntities">
+  <EntityContainerMapping StorageEntityContainer="PartyModelStoreContainer" CdmEntityContainer="PartyEntities">
     <EntitySetMapping Name="BillingInfoes">
-      <EntityTypeMapping TypeName="PartyDBModel.BillingInfo">
+      <EntityTypeMapping TypeName="PartyModel.BillingInfo">
         <MappingFragment StoreEntitySet="BillingInfo">
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clients">
-      <EntityTypeMapping TypeName="PartyDBModel.Client">
+      <EntityTypeMapping TypeName="PartyModel.Client">
         <MappingFragment StoreEntitySet="Client">
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -22,7 +22,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ContactInfoes">
-      <EntityTypeMapping TypeName="PartyDBModel.ContactInfo">
+      <EntityTypeMapping TypeName="PartyModel.ContactInfo">
         <MappingFragment StoreEntitySet="ContactInfo">
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -31,7 +31,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DecorationArrangements">
-      <EntityTypeMapping TypeName="PartyDBModel.DecorationArrangement">
+      <EntityTypeMapping TypeName="PartyModel.DecorationArrangement">
         <MappingFragment StoreEntitySet="DecorationArrangement">
           <ScalarProperty Name="EventId" ColumnName="EventId" />
           <ScalarProperty Name="DecorationId" ColumnName="DecorationId" />
@@ -39,7 +39,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DecorationMenus">
-      <EntityTypeMapping TypeName="PartyDBModel.DecorationMenu">
+      <EntityTypeMapping TypeName="PartyModel.DecorationMenu">
         <MappingFragment StoreEntitySet="DecorationMenu">
           <ScalarProperty Name="DecorationId" ColumnName="DecorationId" />
           <ScalarProperty Name="DecorationName" ColumnName="DecorationName" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EntertainmentArrangements">
-      <EntityTypeMapping TypeName="PartyDBModel.EntertainmentArrangement">
+      <EntityTypeMapping TypeName="PartyModel.EntertainmentArrangement">
         <MappingFragment StoreEntitySet="EntertainmentArrangement">
           <ScalarProperty Name="EventId" ColumnName="EventId" />
           <ScalarProperty Name="EntertainmentId" ColumnName="EntertainmentId" />
@@ -56,7 +56,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EntertainmentMenus">
-      <EntityTypeMapping TypeName="PartyDBModel.EntertainmentMenu">
+      <EntityTypeMapping TypeName="PartyModel.EntertainmentMenu">
         <MappingFragment StoreEntitySet="EntertainmentMenu">
           <ScalarProperty Name="EntertainmentId" ColumnName="EntertainmentId" />
           <ScalarProperty Name="EntertainmentName" ColumnName="EntertainmentName" />
@@ -65,9 +65,10 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Events">
-      <EntityTypeMapping TypeName="PartyDBModel.Event">
+      <EntityTypeMapping TypeName="PartyModel.Event">
         <MappingFragment StoreEntitySet="Event">
           <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="LocationId" ColumnName="LocationId" />
           <ScalarProperty Name="EventDate" ColumnName="EventDate" />
           <ScalarProperty Name="InviteeNum" ColumnName="InviteeNum" />
@@ -76,7 +77,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FoodArrangements">
-      <EntityTypeMapping TypeName="PartyDBModel.FoodArrangement">
+      <EntityTypeMapping TypeName="PartyModel.FoodArrangement">
         <MappingFragment StoreEntitySet="FoodArrangement">
           <ScalarProperty Name="EventId" ColumnName="EventId" />
           <ScalarProperty Name="FoodId" ColumnName="FoodId" />
@@ -84,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FoodMenus">
-      <EntityTypeMapping TypeName="PartyDBModel.FoodMenu">
+      <EntityTypeMapping TypeName="PartyModel.FoodMenu">
         <MappingFragment StoreEntitySet="FoodMenu">
           <ScalarProperty Name="FoodId" ColumnName="FoodId" />
           <ScalarProperty Name="FoodName" ColumnName="FoodName" />
@@ -93,7 +94,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Locations">
-      <EntityTypeMapping TypeName="PartyDBModel.Location">
+      <EntityTypeMapping TypeName="PartyModel.Location">
         <MappingFragment StoreEntitySet="Location">
           <ScalarProperty Name="LocationId" ColumnName="LocationId" />
           <ScalarProperty Name="PostCode" ColumnName="PostCode" />
@@ -103,21 +104,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PaymentInfoes">
-      <EntityTypeMapping TypeName="PartyDBModel.PaymentInfo">
+      <EntityTypeMapping TypeName="PartyModel.PaymentInfo">
         <MappingFragment StoreEntitySet="PaymentInfo">
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="CardNum" ColumnName="CardNum" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="CardCvv" ColumnName="CardCvv" />
           <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Requests">
-      <EntityTypeMapping TypeName="PartyDBModel.Request">
-        <MappingFragment StoreEntitySet="Request">
-          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
-          <ScalarProperty Name="EventId" ColumnName="EventId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

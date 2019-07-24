@@ -14,7 +14,7 @@ namespace LocalDBwebAPI.Controllers
 {
     public class ClientsController : ApiController
     {
-        private PartyDBEntities db = new PartyDBEntities();
+        private PartyEntities db = new PartyEntities();
         public IEnumerable<Client> Get(String FirstName)
         {
             return db.Clients.Where(e => e.FirstName == FirstName);
@@ -91,8 +91,18 @@ namespace LocalDBwebAPI.Controllers
         [ResponseType(typeof(Client))]
         public IHttpActionResult DeleteClient(int id)
         {
-            var controler = new ContactInfoesController();
-            controler.DeleteContactInfo(id);
+            var infocontroller = new ContactInfoesController();
+            infocontroller.DeleteContactInfo(id);
+
+            var eventscontroller = new EventsController();
+            IEnumerable<Event> eventlist = eventscontroller.Get(id);
+
+            foreach (Event item in eventlist)
+            {
+                db.Events.Attach(item);
+                db.Events.Remove(item);
+            }
+
             Client client = db.Clients.Find(id);
             if (client == null)
             {

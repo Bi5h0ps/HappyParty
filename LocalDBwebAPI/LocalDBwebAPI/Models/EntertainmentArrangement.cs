@@ -16,8 +16,5 @@ namespace LocalDBwebAPI.Models
     {
         public int EventId { get; set; }
         public string EntertainmentId { get; set; }
-    
-        public virtual EntertainmentMenu EntertainmentMenu { get; set; }
-        public virtual Event Event { get; set; }
     }
 }

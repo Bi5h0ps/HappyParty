@@ -14,17 +14,8 @@ namespace LocalDBwebAPI.Models
     
     public partial class DecorationMenu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DecorationMenu()
-        {
-            this.DecorationArrangements = new HashSet<DecorationArrangement>();
-        }
-    
         public string DecorationId { get; set; }
         public string DecorationName { get; set; }
         public string Supplier { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DecorationArrangement> DecorationArrangements { get; set; }
     }
 }

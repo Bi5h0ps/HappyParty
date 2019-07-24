@@ -14,17 +14,8 @@ namespace LocalDBwebAPI.Models
     
     public partial class FoodMenu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FoodMenu()
-        {
-            this.FoodArrangements = new HashSet<FoodArrangement>();
-        }
-    
         public string FoodId { get; set; }
         public string FoodName { get; set; }
         public string Supplier { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FoodArrangement> FoodArrangements { get; set; }
     }
 }

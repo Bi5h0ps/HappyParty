@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\theo2\Downloads\HappyParty-database-WebApiImplementation\LocalDBwebAPI\LocalDBwebAPI\Models\PartyModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\CS348\LocalDBwebAPI\LocalDBwebAPI\Models\PartyModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

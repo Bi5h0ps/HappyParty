@@ -13,10 +13,10 @@ namespace LocalDBwebAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PartyDBEntities : DbContext
+    public partial class PartyEntities : DbContext
     {
-        public PartyDBEntities()
-            : base("name=PartyDBEntities")
+        public PartyEntities()
+            : base("name=PartyEntities")
         {
         }
     
@@ -37,6 +37,5 @@ namespace LocalDBwebAPI.Models
         public virtual DbSet<FoodMenu> FoodMenus { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<PaymentInfo> PaymentInfoes { get; set; }
-        public virtual DbSet<Request> Requests { get; set; }
     }
 }

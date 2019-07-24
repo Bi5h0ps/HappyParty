@@ -12,39 +12,39 @@ using LocalDBwebAPI.Models;
 
 namespace LocalDBwebAPI.Controllers
 {
-    public class ContactInfoesController : ApiController
+    public class LocationsController : ApiController
     {
         private PartyEntities db = new PartyEntities();
 
-        // GET: api/ContactInfoes
-        public IQueryable<ContactInfo> GetContactInfoes()
+        // GET: api/Locations
+        public IQueryable<Location> GetLocations()
         {
-            return db.ContactInfoes;
+            return db.Locations;
         }
 
-        // GET: api/ContactInfoes/5
-        [ResponseType(typeof(ContactInfo))]
-        public IHttpActionResult GetContactInfo(int id)
+        // GET: api/Locations/5
+        [ResponseType(typeof(Location))]
+        public IHttpActionResult GetLocation(string id)
         {
-            ContactInfo contactInfo = db.ContactInfoes.Find(id);
-            if (contactInfo == null)
+            Location location = db.Locations.Find(id);
+            if (location == null)
             {
                 return NotFound();
             }
 
-            return Ok(contactInfo);
+            return Ok(location);
         }
 
-        // PUT: api/ContactInfoes/5
+        // PUT: api/Locations/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutContactInfo(int id, ContactInfo contactInfo)
+        public IHttpActionResult PutLocation(string id, Location location)
         {
-            if (id != contactInfo.ClientId)
+            if (id != location.LocationId)
             {
                 return BadRequest();
             }
 
-            db.Entry(contactInfo).State = EntityState.Modified;
+            db.Entry(location).State = EntityState.Modified;
 
             try
             {
@@ -52,7 +52,7 @@ namespace LocalDBwebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ContactInfoExists(id))
+                if (!LocationExists(id))
                 {
                     return NotFound();
                 }
@@ -65,11 +65,11 @@ namespace LocalDBwebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/ContactInfoes
-        [ResponseType(typeof(ContactInfo))]
-        public IHttpActionResult PostContactInfo(ContactInfo contactInfo)
+        // POST: api/Locations
+        [ResponseType(typeof(Location))]
+        public IHttpActionResult PostLocation(Location location)
         {
-            db.ContactInfoes.Add(contactInfo);
+            db.Locations.Add(location);
 
             try
             {
@@ -77,9 +77,9 @@ namespace LocalDBwebAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ContactInfoExists(contactInfo.ClientId))
+                if (LocationExists(location.LocationId))
                 {
-                    return PutContactInfo(contactInfo.ClientId, contactInfo);
+                    return Conflict();
                 }
                 else
                 {
@@ -87,23 +87,23 @@ namespace LocalDBwebAPI.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = contactInfo.ClientId }, contactInfo);
+            return CreatedAtRoute("DefaultApi", new { id = location.LocationId }, location);
         }
 
-        // DELETE: api/ContactInfoes/5
-        [ResponseType(typeof(ContactInfo))]
-        public IHttpActionResult DeleteContactInfo(int id)
+        // DELETE: api/Locations/5
+        [ResponseType(typeof(Location))]
+        public IHttpActionResult DeleteLocation(string id)
         {
-            ContactInfo contactInfo = db.ContactInfoes.Find(id);
-            if (contactInfo == null)
+            Location location = db.Locations.Find(id);
+            if (location == null)
             {
                 return NotFound();
             }
 
-            db.ContactInfoes.Remove(contactInfo);
+            db.Locations.Remove(location);
             db.SaveChanges();
 
-            return Ok(contactInfo);
+            return Ok(location);
         }
 
         protected override void Dispose(bool disposing)
@@ -115,9 +115,9 @@ namespace LocalDBwebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ContactInfoExists(int id)
+        private bool LocationExists(string id)
         {
-            return db.ContactInfoes.Count(e => e.ClientId == id) > 0;
+            return db.Locations.Count(e => e.LocationId == id) > 0;
         }
     }
 }

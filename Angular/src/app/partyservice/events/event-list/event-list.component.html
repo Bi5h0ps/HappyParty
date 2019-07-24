@@ -1,1 +1,81 @@
-<p>event-list works!</p>
+<div class="row">
+    <div class="input-group col-10">
+        <div class="input-group-prepend">
+            <button type="button" class="btn btn-outline-secondary"
+                (click)="onSearch(box.value)">{{this.Content[searchFlag]}}</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="toggleSearch(2)">List ALL</a>
+            </div>
+        </div>
+        <input [disabled]="isDisabled()" #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control"
+            aria-label="Text input with segmented dropdown button" [(ngModel)]="searchValue">
+    </div>
+    <div class="toolbar-button">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#EventModal"
+            (click)="onNewEvent()" #newClientButton>
+            <img src="../../../../assets/icon/svg/plus.svg" class="happy-icon">
+            New Event
+        </button>
+    </div>
+    <div class="toolbar-button">
+        <button type="button" class="btn btn-primary" (click)="onRefresh()">
+            <img src="../../../../assets/icon/svg/loop-circular.svg" class="happy-icon">
+        </button>
+    </div>
+</div>
+<div class="row">
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-left">EventId</th>
+                <th class="text-left">ClientId</th>
+                <th class="text-left">Location</th>
+                <th class="text-left">EventDate</th>
+                <th class="text-left">InviteeNum</th>
+                <th class="text-left">budget</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr (click)="onSelect(event)" *ngFor="let event of service.eventList">
+                <td class="text-left">E00{{event.EventId}}</td>
+                <td class="text-left">C00{{event.ClientId}}</td>
+                <td class="text-left">{{event.LocationId}}</td>
+                <td class="text-left">{{event.EventDate}}</td>
+                <td class="text-left">{{event.InviteeNum}}</td>
+                <td class="text-left">{{event.budget}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="EventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <app-event></app-event>
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="this.isItemSelected" type="button"
+                    (click)="onDelete(this.service.formData.EventId)"
+                    class="btn btn-danger button-delete">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
+                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

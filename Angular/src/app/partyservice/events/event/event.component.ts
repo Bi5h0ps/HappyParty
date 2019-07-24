@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { EventService } from '../../service/event.service';
 
 @Component({
   selector: 'app-event',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: EventService) { }
 
   ngOnInit() {
+    this.resetForm();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.resetForm();
+    }
+    this.service.formData = {
+      EventId:null,
+      ClientId: null,
+      LocationId:'',
+      EventDate: '',
+      InviteeNum: null,
+      budget:null,
+    }
   }
 
 }

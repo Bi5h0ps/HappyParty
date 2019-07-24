@@ -1,1 +1,39 @@
-<p>event works!</p>
+<div class="mg-2 content">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <input type="hidden" name="EventId" #EventId="ngModel" [(ngModel)]="service.formData.EventId">
+        <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect01" name="ClientId"
+                [(ngModel)]="service.formData.ClientId">
+                <option selected>Select</option>
+                <option *ngFor="let client of service.clientlist" value="{{client.ClientId}}">C00{{client.ClientId}}</option>
+            </select>
+            <div class="input-group-append">
+                <label class="input-group-text" for="inputGroupSelect01">Client Id</label>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <select class="custom-select" id="inputGroupSelect02" name="LocationId"
+                [(ngModel)]="service.formData.LocationId">
+                <option selected>Select</option>
+                <option *ngFor="let location of service.Locationlist" value="{{location.LocationId}}">{{location.LocationId}}</option>
+            </select>
+            <div class="input-group-append">
+                <label class="input-group-text" for="inputGroupSelect02">Location</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input placeholder="Event Date" name="EventDate" #EventDate="ngModel"
+                    [(ngModel)]="service.formData.EventDate" class="form-control custom-input">
+            </div>
+            <div class="form-group  col-md-6">
+                <input placeholder="Invitee Number" name="InviteeNum" #InviteeNum="ngModel"
+                    [(ngModel)]="service.formData.InviteeNum" class="form-control custom-input ">
+            </div>
+        </div>
+        <div class="form-group">
+            <input placeholder="budget" name="budget" #budget="ngModel"
+                [(ngModel)]="service.formData.budget" class="form-control custom-input ">
+        </div>
+    </form>
+</div>

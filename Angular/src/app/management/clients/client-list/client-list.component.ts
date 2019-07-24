@@ -41,7 +41,7 @@ export class ClientListComponent implements OnInit {
     return false;
   }
 
-  onDelete(id: number,input: string) {
+  onDelete(id: number) {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteClient(id).subscribe(res => {
         this.service.refreshListAll();
@@ -80,10 +80,10 @@ export class ClientListComponent implements OnInit {
   }
 
   onSelect(clientData: Client) {
+    this.service.refreshListAll();
     this.newClientButton.nativeElement.click();
     this.isItemSelected = true;
     this.service.formData = Object.assign({}, clientData);
-
     this.service.formClientInfo.ClientId = clientData.ClientId;
     for (let info of this.service.Infolist) {
       if (info.ClientId == clientData.ClientId) {
@@ -110,7 +110,7 @@ export class ClientListComponent implements OnInit {
         });
       } else {
         this.service.putClient(this.service.formData).subscribe(res => {
-          this.service.postInfo(this.service.formClientInfo).subscribe(res => {
+          this.service.putInfo(this.service.formClientInfo).subscribe(res => {
             this.closeModal.nativeElement.click();
             this.onRefresh();
           });
