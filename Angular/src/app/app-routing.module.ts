@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ManagementComponent } from './management/management.component';
 import { HomeComponent } from './home/home.component';
 import { PartyserviceComponent } from './partyservice/partyservice.component';
+import { ContactinfoComponent } from './management/contactinfo/contactinfo.component';
 
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent},
   {path: "management", component: ManagementComponent},
-  {path: "partyservice", component: PartyserviceComponent}
+  {path: "partyservice", component: PartyserviceComponent},
+  {path: "contactinfo", component: ContactinfoComponent}
 ];
 
 @NgModule({

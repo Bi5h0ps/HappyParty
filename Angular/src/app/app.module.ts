@@ -16,6 +16,12 @@ import { PartyserviceComponent } from './partyservice/partyservice.component';
 import { EventsComponent } from './partyservice/events/events.component';
 import { EventComponent } from './partyservice/events/event/event.component';
 import { EventListComponent } from './partyservice/events/event-list/event-list.component';
+import { ContactinfoComponent } from './management/contactinfo/contactinfo.component';
+import { InfoComponent } from './management/Contactinfo/info/info.component';
+import { InfoListComponent } from './management/Contactinfo/info-list/info-list.component';
+import { AddressComponent } from './management/address/address.component';
+import { AddressmComponent } from './management/address/addressm/addressm.component';
+import { AddresscComponent } from './management/address/addressc/addressc.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { EventListComponent } from './partyservice/events/event-list/event-list.
     PartyserviceComponent,
     EventsComponent,
     EventComponent,
-    EventListComponent
+    EventListComponent,
+    ContactinfoComponent,
+    InfoComponent,
+    InfoListComponent,
+    AddressComponent,
+    AddressmComponent,
+    AddresscComponent
   ],
   imports: [
     BrowserModule,

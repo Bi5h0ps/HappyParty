@@ -1,0 +1,16 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="ClientId" #ClientId="ngModel" [(ngModel)]="service.formData.ClientId"
+        class="form-control custom-input ">
+    <div class="form-group">
+        <label>Email</label>
+        <input name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control custom-input ">
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input name="PhoneNum" #PhoneNum="ngModel" [(ngModel)]="service.formData.PhoneNum"
+            class="form-control custom-input ">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block" (click)="onSubmit">sumbit</button>
+    </div>
+</form>

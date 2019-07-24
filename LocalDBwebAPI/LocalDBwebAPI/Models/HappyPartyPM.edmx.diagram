@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e925b95429e74f47b01c3512764d7848" Name="Diagram1">
+        <EntityTypeShape EntityType="HappyPartyProjectModel.BillingInfo" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.Client" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.ContactInfo" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.DecorationArrangement" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.DecorationMenu" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.EntertainmentArrangement" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.EntertainmentMenu" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.Event" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.FoodArrangement" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.FoodMenu" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.Location" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.PaymentInfo" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HappyPartyProjectModel.Request" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__BillingIn__Clien__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__ContactIn__Clien__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__PaymentIn__Clien__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Request__ClientI__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Decoratio__Decor__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Decoratio__Event__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Entertain__Enter__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Entertain__Event__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Event__LocationI__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__FoodArran__Event__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__Request__EventId__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="HappyPartyProjectModel.FK__FoodArran__FoodI__5070F446" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

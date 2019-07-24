@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Client } from './client.model';
 import { HttpClient } from "@angular/common/http";
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  Theo: Client;
-  Jiahan: Client;
   formData: Client;
   list : Client[] = [];
 
-  readonly rootURL ="https://localhost:44302/api"
+  readonly rootURL ="https://localhost:44333/api"
 
   constructor(private http : HttpClient) {
    }

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectEntities">
+    <EntitySetMapping Name="BillingInfoes">
+      <EntityTypeMapping TypeName="ProjectModel.BillingInfo">
+        <MappingFragment StoreEntitySet="BillingInfo">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="ProjectModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="VipLevel" ColumnName="VipLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactInfoes">
+      <EntityTypeMapping TypeName="ProjectModel.ContactInfo">
+        <MappingFragment StoreEntitySet="ContactInfo">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DecorationArrangements">
+      <EntityTypeMapping TypeName="ProjectModel.DecorationArrangement">
+        <MappingFragment StoreEntitySet="DecorationArrangement">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="DecorationId" ColumnName="DecorationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DecorationMenus">
+      <EntityTypeMapping TypeName="ProjectModel.DecorationMenu">
+        <MappingFragment StoreEntitySet="DecorationMenu">
+          <ScalarProperty Name="DecorationId" ColumnName="DecorationId" />
+          <ScalarProperty Name="DecorationName" ColumnName="DecorationName" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntertainmentArrangements">
+      <EntityTypeMapping TypeName="ProjectModel.EntertainmentArrangement">
+        <MappingFragment StoreEntitySet="EntertainmentArrangement">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EntertainmentId" ColumnName="EntertainmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntertainmentMenus">
+      <EntityTypeMapping TypeName="ProjectModel.EntertainmentMenu">
+        <MappingFragment StoreEntitySet="EntertainmentMenu">
+          <ScalarProperty Name="EntertainmentId" ColumnName="EntertainmentId" />
+          <ScalarProperty Name="EntertainmentName" ColumnName="EntertainmentName" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="ProjectModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="InviteeNum" ColumnName="InviteeNum" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodArrangements">
+      <EntityTypeMapping TypeName="ProjectModel.FoodArrangement">
+        <MappingFragment StoreEntitySet="FoodArrangement">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodMenus">
+      <EntityTypeMapping TypeName="ProjectModel.FoodMenu">
+        <MappingFragment StoreEntitySet="FoodMenu">
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+          <ScalarProperty Name="FoodName" ColumnName="FoodName" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="ProjectModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="LocationAddress" ColumnName="LocationAddress" />
+          <ScalarProperty Name="AdditionalInfo" ColumnName="AdditionalInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentInfoes">
+      <EntityTypeMapping TypeName="ProjectModel.PaymentInfo">
+        <MappingFragment StoreEntitySet="PaymentInfo">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="CardCvv" ColumnName="CardCvv" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="ProjectModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

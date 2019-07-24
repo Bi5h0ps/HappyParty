@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9423fc330abb41e88b864567987fc64d" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectModel.BillingInfo" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Client" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.ContactInfo" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.DecorationArrangement" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.DecorationMenu" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.EntertainmentArrangement" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.EntertainmentMenu" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Event" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.FoodArrangement" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.FoodMenu" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Location" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.PaymentInfo" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Request" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK__BillingIn__Clien__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__ContactIn__Clien__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__PaymentIn__Clien__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Request__ClientI__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Decoratio__Decor__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Decoratio__Event__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Entertain__Enter__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Entertain__Event__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Event__LocationI__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__FoodArran__Event__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Request__EventId__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__FoodArran__FoodI__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
