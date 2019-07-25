@@ -1,21 +1,19 @@
 <div class="mg-2 content">
     <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
-        <input type="hidden" name="LocationId" #EventId="ngModel" [(ngModel)]="service.formData.LocationId">
-
         <div class="form-group">
-            <input placeholder="Location Id" name="LocationId" #EventDate="ngModel"
+            <input maxlength="8" placeholder="Location Id" name="LocationId" #EventDate="ngModel"
                 [(ngModel)]="service.formData.LocationId" class="form-control custom-input">
         </div>
         <div class="form-group">
-            <input placeholder="Post Code" name="PostCode" #InviteeNum="ngModel" [(ngModel)]="service.formData.PostCode"
+            <input maxlength="6" placeholder="Post Code" name="PostCode" #InviteeNum="ngModel" [(ngModel)]="service.formData.PostCode"
                 class="form-control custom-input ">
         </div>
         <div class="form-group">
-            <input placeholder="Address" name="Address" #budget="ngModel" [(ngModel)]="service.formData.LocationAddress"
+            <input maxlength="100" placeholder="Address" name="LocationAddress" #LocationAddress="ngModel" [(ngModel)]="service.formData.LocationAddress"
                 class="form-control custom-input ">
         </div>
         <div class="form-group">
-            <textarea class="form-control" placeholder="Description" aria-label="With textarea" [(ngModel)]="service.formData.AdditionalInfo"></textarea>
+            <textarea maxlength="150" class="form-control" placeholder="AdditionalInfo" name="AdditionalInfo" #AdditionalInfo="ngModel" aria-label="With textarea" [(ngModel)]="service.formData.AdditionalInfo"></textarea>
         </div>
     </form>
 </div>

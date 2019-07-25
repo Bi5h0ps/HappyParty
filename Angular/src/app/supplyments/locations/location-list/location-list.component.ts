@@ -9,11 +9,8 @@ import { Location } from '../service/location.model';
 })
 export class LocationListComponent implements OnInit {
 
-  // 0 => first name 
-  // 1 => vip level
-  // 2 => ALL
   searchFlag: number = 0;
-  Content: string[] = ['Search by First Name', 'Search by VipLevel', 'List All'];
+  Content: string[] = ['Search by Location Name', 'Search by Postal Code', 'List All'];
   searchValue: string = '';
   isItemSelected: boolean = false;
   @ViewChild('closeModal', { static: false }) closeModal: ElementRef;
@@ -51,10 +48,10 @@ export class LocationListComponent implements OnInit {
   }
 
   onSearch(input: string) {
-    if (this.searchFlag == 0) {
-      // this.service.refreshList(input);
+    if(this.searchFlag == 0) {
+      this.service.refreshList(input, this.searchFlag);
     } else if (this.searchFlag == 1) {
-      // this.service.refreshList(Number(input));
+      this.service.refreshList(input, this.searchFlag);
     } else {
       this.service.refreshListAll();
     }
@@ -67,10 +64,10 @@ export class LocationListComponent implements OnInit {
   onNewLocation() {
     this.isItemSelected = false;
     this.service.formData = {
-      LocationId:"",
-      PostCode:"",
-      LocationAddress:"",
-      AdditionalInfo:""
+      LocationId: "",
+      PostCode: "",
+      LocationAddress: "",
+      AdditionalInfo: ""
     }
   }
 
@@ -82,17 +79,11 @@ export class LocationListComponent implements OnInit {
   }
 
   modalOnSubmit() {
-    if (this.service.formData.LocationId == "") {
-      this.service.postLocation(this.service.formData).subscribe(res => {
-        this.closeModal.nativeElement.click();
-        this.onRefresh();
-      });
-    } else {
-      this.service.putLocation(this.service.formData).subscribe(res => {
-        this.closeModal.nativeElement.click();
-        this.onRefresh();
-      });
-    }
+    this.service.postLocation(this.service.formData).subscribe(res => {
+      this.closeModal.nativeElement.click();
+      this.onRefresh();
+    });
+
   }
 
 }

@@ -8,9 +8,9 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
+                <a class="dropdown-item" (click)="toggleSearch(0)">By Location Name</a>
                 <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+                <a class="dropdown-item" (click)="toggleSearch(1)">By Postal Code</a>
                 <div role="separator" class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="toggleSearch(2)">List ALL</a>
             </div>
@@ -35,16 +35,16 @@
     <table class="table-fill">
         <thead>
             <tr>
-                <th class="text-left">LocationId</th>
+                <th class="text-left">Location Name</th>
                 <th class="text-left">Post Code</th>
                 <th class="text-left">Address</th>
                 <th class="text-left">Additional Info</th>
             </tr>
         </thead>
         <tbody class="table-hover">
-            <tr (click)="onSelect(location)" *ngFor="let location of service.locationList">
-                <td class="text-left">E00{{location.LocationId}}</td>
-                <td class="text-left">C00{{location.PostCode}}</td>
+            <tr (click)="onSelect(location)" *ngFor="let location of service.Locationlist">
+                <td class="text-left">{{location.LocationId}}</td>
+                <td class="text-left">{{location.PostCode}}</td>
                 <td class="text-left">{{location.LocationAddress}}</td>
                 <td class="text-left">{{location.AdditionalInfo}}</td>
             </tr>
@@ -70,7 +70,7 @@
                     (click)="onDelete(this.service.formData.LocationId)"
                     class="btn btn-danger button-delete">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
-                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+                <button [disabled]="this.service.formData.LocationId == ''" type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
             </div>
         </div>
     </div>

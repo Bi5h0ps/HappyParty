@@ -9,11 +9,8 @@ import { Event } from '../../service/event.model';
 })
 export class EventListComponent implements OnInit {
 
-  // 0 => first name 
-  // 1 => vip level
-  // 2 => ALL
   searchFlag: number = 0;
-  Content: string[]=['Search by First Name','Search by VipLevel','List All'];
+  Content: string[]=['Search by Event ID','Search by Client ID','Search by Location', 'List All'];
   searchValue: string = '';
   isItemSelected: boolean = false;
   @ViewChild('closeModal',{static: false}) closeModal: ElementRef;
@@ -29,6 +26,7 @@ export class EventListComponent implements OnInit {
 
   populateForm(event: Event) {
     this.service.formData = Object.assign({}, event);
+    this.service.formData.EventDate = this.service.formData.EventDate.substring(0,10);
   }
 
   toggleSearch(flag: number) {
@@ -37,7 +35,7 @@ export class EventListComponent implements OnInit {
   }
 
   isDisabled(): boolean{
-    if (this.searchFlag == 2) return true;
+    if (this.searchFlag == 3) return true;
     return false;
   }
 
@@ -52,9 +50,11 @@ export class EventListComponent implements OnInit {
 
   onSearch(input: string) {
     if(this.searchFlag == 0) {
-      this.service.refreshList(input);
+      this.service.refreshList(Number(input.substring(2,input.length)), this.searchFlag);
     } else if (this.searchFlag == 1) {
-      this.service.refreshList(Number(input));
+      this.service.refreshList(Number(input.substring(2,input.length)), this.searchFlag);
+    } else if (this.searchFlag == 2) {
+      this.service.refreshList(input, this.searchFlag);
     } else {
       this.service.refreshListAll();
     }
@@ -87,6 +87,7 @@ export class EventListComponent implements OnInit {
     this.newClientButton.nativeElement.click();
     this.isItemSelected = true;
     this.service.formData = Object.assign({}, event);
+    this.service.formData.EventDate = this.service.formData.EventDate.substring(0,10);
   }
 
   modalOnSubmit() {

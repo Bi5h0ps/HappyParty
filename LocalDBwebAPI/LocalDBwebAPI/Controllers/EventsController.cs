@@ -26,6 +26,11 @@ namespace LocalDBwebAPI.Controllers
             return db.Events.Where(e => e.LocationId == location);
         }
 
+        public IEnumerable<Event> GetEID(int EventId)
+        {
+            return db.Events.Where(e => e.EventId == EventId);
+        }
+
         // GET: api/Events
         public IQueryable<Event> GetEvents()
         {

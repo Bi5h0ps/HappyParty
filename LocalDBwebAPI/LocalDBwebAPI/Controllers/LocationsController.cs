@@ -16,6 +16,15 @@ namespace LocalDBwebAPI.Controllers
     {
         private PartyFinalEntities db = new PartyFinalEntities();
 
+        public IEnumerable<Location> Get(string lid)
+        {
+            return db.Locations.Where(e => e.LocationId == lid);
+        }
+        public IEnumerable<Location> GetP(string pc)
+        {
+            return db.Locations.Where(e => e.PostCode == pc);
+        }
+
         // GET: api/Locations
         public IQueryable<Location> GetLocations()
         {
@@ -79,7 +88,7 @@ namespace LocalDBwebAPI.Controllers
             {
                 if (LocationExists(location.LocationId))
                 {
-                    return Conflict();
+                    return PutLocation(location.LocationId, location);
                 }
                 else
                 {

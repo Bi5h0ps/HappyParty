@@ -8,11 +8,13 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" (click)="toggleSearch(0)">By First Name</a>
+                <a class="dropdown-item" (click)="toggleSearch(0)">By Event ID</a>
                 <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" (click)="toggleSearch(1)">By Vip Level</a>
+                <a class="dropdown-item" (click)="toggleSearch(1)">By Client ID</a>
                 <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" (click)="toggleSearch(2)">List ALL</a>
+                <a class="dropdown-item" (click)="toggleSearch(2)">By Location</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="toggleSearch(3)">List ALL</a>
             </div>
         </div>
         <input [disabled]="isDisabled()" #box (keyup.enter)="onSearch(box.value)" type="text" class="form-control"
@@ -48,9 +50,9 @@
                 <td class="text-left">E00{{event.EventId}}</td>
                 <td class="text-left">C00{{event.ClientId}}</td>
                 <td class="text-left">{{event.LocationId}}</td>
-                <td class="text-left">{{event.EventDate}}</td>
+                <td class="text-left" data-ng-model="date:'yyyy-MM-DD'">{{event.EventDate | tolimit: 10}}</td>
                 <td class="text-left">{{event.InviteeNum}}</td>
-                <td class="text-left">{{event.budget}}</td>
+                <td class="text-left">{{event.budget | tolimit: 10}}</td>
             </tr>
         </tbody>
     </table>
@@ -74,7 +76,9 @@
                     (click)="onDelete(this.service.formData.EventId)"
                     class="btn btn-danger button-delete">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
-                <button type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
+                <button  [disabled]="this.service.formData.ClientId == '' || this.service.formData.ClientId == 'Select'  
+                || this.service.formData.LocationId == '' || this.service.formData.LocationId == 'Select'"
+                type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
             </div>
         </div>
     </div>

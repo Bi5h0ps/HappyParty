@@ -24,17 +24,29 @@ export class EventService {
     return this.http.post(this.rootURL + '/Events', formData);
   }
 
-  refreshList(id: number | string) {
-    if (typeof id === 'string') {
-      this.http.get(this.rootURL + '/Clients' + '?FirstName=' + id)
-        .toPromise().then(res => this.clientlist = res as Client[]);
-      this.http.get(this.rootURL + '/Events')
+  refreshList(id: number | string, flag: number) {
+    if (flag == 0) {
+      this.http.get(this.rootURL + '/Clients')
+      .toPromise().then(res => this.clientlist = res as Client[]);
+      this.http.get(this.rootURL + '/Events?EventId='+ id)
+        .toPromise().then(res => this.eventList = res as Event[]);
+      this.http.get(this.rootURL + '/Locations')
+        .toPromise().then(res => this.Locationlist = res as Location[]);
+    } else if (flag == 1) {
+      this.http.get(this.rootURL + '/Clients')
+      .toPromise().then(res => this.clientlist = res as Client[]);
+      this.http.get(this.rootURL + '/Events?ClientId='+ id)
+        .toPromise().then(res => this.eventList = res as Event[]);
+      this.http.get(this.rootURL + '/Locations')
+        .toPromise().then(res => this.Locationlist = res as Location[]);
+    } else if (flag == 2) {
+      this.http.get(this.rootURL + '/Clients')
+      .toPromise().then(res => this.clientlist = res as Client[]);
+      this.http.get(this.rootURL + '/Events?location=' + id)
         .toPromise().then(res => this.eventList = res as Event[]);
       this.http.get(this.rootURL + '/Locations')
         .toPromise().then(res => this.Locationlist = res as Location[]);
     } else {
-      this.http.get(this.rootURL + '/Clients' + '?level=' + id)
-        .toPromise().then(res => this.clientlist = res as Client[]);
       this.http.get(this.rootURL + '/Events')
         .toPromise().then(res => this.eventList = res as Event[]);
       this.http.get(this.rootURL + '/Locations')

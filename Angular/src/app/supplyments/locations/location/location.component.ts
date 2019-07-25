@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from '../service/location.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-location',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: LocationService) { }
 
   ngOnInit() {
+    this.resetForm();
   }
 
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.resetForm();
+    }
+    this.service.formData = {
+      LocationId:"",
+      PostCode:"",
+      LocationAddress:"",
+      AdditionalInfo:""
+    }
+  }
 }

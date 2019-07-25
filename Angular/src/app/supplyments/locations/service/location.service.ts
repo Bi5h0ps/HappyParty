@@ -16,19 +16,32 @@ export class LocationService {
   }
 
   postLocation(formData: Location) {
-    return this.http.post(this.rootURL + '/Location', formData);
+    return this.http.post(this.rootURL + '/Locations', formData);
+  }
+
+  refreshList(id: number | string, flag: number) {
+    if (flag == 0) {
+      this.http.get(this.rootURL + '/Locations?lid='+id)
+        .toPromise().then(res => this.Locationlist = res as Location[]);
+    } else if (flag == 1) {
+      this.http.get(this.rootURL + '/Locations?pc='+ id)
+        .toPromise().then(res => this.Locationlist = res as Location[]);
+    } else {
+      this.http.get(this.rootURL + '/Locations')
+        .toPromise().then(res => this.Locationlist = res as Location[]);
+    }
   }
 
   refreshListAll() {
-    this.http.get(this.rootURL + '/Location')
+    this.http.get(this.rootURL + '/Locations')
       .toPromise().then(res => this.Locationlist = res as Location[]);
   }
 
   putLocation(formData: Location) {
-    return this.http.put(this.rootURL + '/Location/' + formData.LocationId, formData);
+    return this.http.put(this.rootURL + '/Locations/' + formData.LocationId, formData);
   }
 
   deleteLocation(id: number) {
-    return this.http.delete(this.rootURL + '/Location/' + id);
+    return this.http.delete(this.rootURL + '/Locations/' + id);
   }
 }

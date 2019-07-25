@@ -20,6 +20,7 @@ import { LocationsComponent } from './supplyments/locations/locations.component'
 import { LocationComponent } from './supplyments/locations/location/location.component';
 import { LocationListComponent } from './supplyments/locations/location-list/location-list.component';
 import { SupplymentsComponent } from './supplyments/supplyments.component';
+import { TolimitPipe } from './tolimit.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SupplymentsComponent } from './supplyments/supplyments.component';
     LocationsComponent,
     LocationComponent,
     LocationListComponent,
-    SupplymentsComponent
+    SupplymentsComponent,
+    TolimitPipe
   ],
   imports: [
     BrowserModule,
