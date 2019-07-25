@@ -9,6 +9,7 @@ export class LocationService {
 
   formData: Location;
   Locationlist: Location[] = [];
+  isUpdate = false;
 
   readonly rootURL = "https://localhost:44333/api"
 

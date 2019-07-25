@@ -22,6 +22,7 @@ export class LocationListComponent implements OnInit {
   ngOnInit() {
     this.onNewLocation();
     this.service.refreshListAll();
+    this.service.isUpdate = false;
   }
 
   populateForm(location: Location) {
@@ -43,6 +44,7 @@ export class LocationListComponent implements OnInit {
       this.service.deleteLocation(id).subscribe(res => {
         this.service.refreshListAll();
         this.closeModal.nativeElement.click();
+        this.service.isUpdate = false;
       });
     }
   }
@@ -63,6 +65,7 @@ export class LocationListComponent implements OnInit {
 
   onNewLocation() {
     this.isItemSelected = false;
+    this.service.isUpdate = false;
     this.service.formData = {
       LocationId: "",
       PostCode: "",
@@ -75,6 +78,7 @@ export class LocationListComponent implements OnInit {
     this.service.refreshListAll();
     this.newClientButton.nativeElement.click();
     this.isItemSelected = true;
+    this.service.isUpdate = true;
     this.service.formData = Object.assign({}, location);
   }
 
@@ -82,6 +86,7 @@ export class LocationListComponent implements OnInit {
     this.service.postLocation(this.service.formData).subscribe(res => {
       this.closeModal.nativeElement.click();
       this.onRefresh();
+      this.service.isUpdate = false;
     });
 
   }
