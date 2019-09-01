@@ -15,7 +15,7 @@ export class ClientService {
 
   readonly rootURL = "https://localhost:44333/api"
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
   }
 
   postClient(formData: Client) {

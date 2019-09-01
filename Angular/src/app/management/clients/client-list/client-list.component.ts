@@ -20,7 +20,7 @@ export class ClientListComponent implements OnInit {
   @ViewChild('newClientButton', {static: false}) newClientButton: ElementRef;
 
 
-  constructor(private service: ClientService) { }
+  constructor(public service: ClientService) { }
 
   ngOnInit() {
     this.onNewClient();

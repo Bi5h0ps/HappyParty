@@ -50,9 +50,9 @@
                 <td class="text-left">E00{{event.EventId}}</td>
                 <td class="text-left">C00{{event.ClientId}}</td>
                 <td class="text-left">{{event.LocationId}}</td>
-                <td class="text-left" data-ng-model="date:'yyyy-MM-DD'">{{event.EventDate | tolimit: 10}}</td>
+                <td class="text-left" data-ng-model="date:'yyyy-MM-DD'">{{event.EventDate | tolimit: "10"}}</td>
                 <td class="text-left">{{event.InviteeNum}}</td>
-                <td class="text-left">{{event.budget | tolimit: 10}}</td>
+                <td class="text-left">{{event.budget | tolimit: "10"}}</td>
             </tr>
         </tbody>
     </table>
@@ -76,7 +76,7 @@
                     (click)="onDelete(this.service.formData.EventId)"
                     class="btn btn-danger button-delete">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal>Close</button>
-                <button  [disabled]="this.service.formData.ClientId == '' || this.service.formData.ClientId == 'Select'  
+                <button  [disabled]="this.service.formData.ClientId == null || this.service.formData.ClientId == -1  
                 || this.service.formData.LocationId == '' || this.service.formData.LocationId == 'Select'"
                 type="button" class="btn btn-primary" (click)="modalOnSubmit()">Submit</button>
             </div>

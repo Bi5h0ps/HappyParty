@@ -17,7 +17,7 @@ export class EventService {
 
   readonly rootURL = "https://localhost:44333/api"
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
   }
 
   postEvent(formData: Event) {

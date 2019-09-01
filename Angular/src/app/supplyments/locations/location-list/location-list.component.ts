@@ -17,7 +17,7 @@ export class LocationListComponent implements OnInit {
   @ViewChild('newClientButton', { static: false }) newClientButton: ElementRef;
 
 
-  constructor(private service: LocationService) { }
+  constructor(public service: LocationService) { }
 
   ngOnInit() {
     this.onNewLocation();
@@ -39,9 +39,10 @@ export class LocationListComponent implements OnInit {
     return false;
   }
 
-  onDelete(id: number) {
+  onDelete(id: string) {
+    var param: number = parseInt(id);
     if (confirm('Are you sure to delete this record?')) {
-      this.service.deleteLocation(id).subscribe(res => {
+      this.service.deleteLocation(param).subscribe(res => {
         this.service.refreshListAll();
         this.closeModal.nativeElement.click();
         this.service.isUpdate = false;

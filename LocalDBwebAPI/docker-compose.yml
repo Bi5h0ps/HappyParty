@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  localdbwebapi:
+    image: ${DOCKER_REGISTRY-}localdbwebapi
+    build:
+      context: .\LocalDBwebAPI
+      dockerfile: Dockerfile

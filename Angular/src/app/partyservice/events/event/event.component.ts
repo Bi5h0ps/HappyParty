@@ -9,7 +9,7 @@ import { EventService } from '../../service/event.service';
 })
 export class EventComponent implements OnInit {
 
-  constructor(private service: EventService) { }
+  constructor(public service: EventService) { }
 
   ngOnInit() {
     this.resetForm();

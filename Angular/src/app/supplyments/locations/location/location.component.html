@@ -1,5 +1,5 @@
 <div class="mg-2 content">
-    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <form #form="ngForm" autocomplete="off">
         <div class="form-group">
             <input maxlength="8" [disabled]="this.service.isUpdate"  placeholder="Location Id" name="LocationId" #EventDate="ngModel"
                 [(ngModel)]="service.formData.LocationId" class="form-control custom-input">

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PartyEntities-Web.config Connection String" description="PartyEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.PartyModel.csdl|res://*/Models.PartyModel.ssdl|res://*/Models.PartyModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-V8U6O8T\SQLEXPRESS;initial catalog=Party;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\HappyParty\\LocalDBwebAPI\\LocalDBwebAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PartyEntities']/@connectionString" />
+  </parameter>
+  <parameter name="PartyFinalEntities-Web.config Connection String" description="PartyFinalEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.PartyFinalModel.csdl|res://*/Models.PartyFinalModel.ssdl|res://*/Models.PartyFinalModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=h62guostudentserver.database.windows.net;initial catalog=PartyFinal;persist security info=True;user id=h62guo;password=npmcs348!;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Projects\\HappyParty\\LocalDBwebAPI\\LocalDBwebAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PartyFinalEntities']/@connectionString" />
+  </parameter>
+</parameters>

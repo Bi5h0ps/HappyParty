@@ -17,7 +17,7 @@ export class EventListComponent implements OnInit {
   @ViewChild('newClientButton', {static: false}) newClientButton: ElementRef;
 
 
-  constructor(private service: EventService) { }
+  constructor(public service: EventService) { }
 
   ngOnInit() {
     this.onNewEvent();

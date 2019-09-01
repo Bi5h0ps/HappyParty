@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LocationComponent implements OnInit {
 
-  constructor(private service: LocationService) { }
+  constructor(public service: LocationService) { }
 
   ngOnInit() {
     this.resetForm();
